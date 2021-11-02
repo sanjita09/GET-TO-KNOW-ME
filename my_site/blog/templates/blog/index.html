@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{% load static %}
+
+
+
+{%block title%}
+    My Blog
+{%endblock%}
+
+
+
+{%block css_files%}
+<link rel="stylesheet" href="{% static "/blog/index.css" %}"/>
+{%endblock%}
+
+
+
+{%block content%}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/sanju.jpg' %}" alt="Sanju-The author of this blog"/>
+            <h2>SANJITA'S  BLOG</h2>
+        </header>
+        <p>Hi, this is Sanju and I love to blog about technology, food and the world!!!!!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My latest posts</h2>
+
+        <ul>
+            {%for post in posts%}
+                {%include "blog/includes/post.html" %}
+            {%endfor%}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I love coding and I love to help others and I enjoy exploring new technologies</p>
+        <p>My goal is to keep growing as a developer by learning new things everyday</p>
+    </section>
+
+{%endblock%}
+
+
